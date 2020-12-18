@@ -59,9 +59,7 @@ export class ToDoList extends React.Component {
 									{content}{" "}
 									<span
 										className="float-right"
-										onClick={index =>
-											this.removeList(index)
-										}>
+										onClick={() => this.removeList(index)}>
 										<i
 											className="fas fa-times"
 											style={{ color: "red " }}
