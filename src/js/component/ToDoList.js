@@ -5,8 +5,8 @@ export class ToDoList extends React.Component {
 		super();
 		this.state = {
 			taskList: [],
-			task: "",
-			taskCounter: 0
+			task: ""
+			//taskCounter: 0
 		};
 	}
 	addList = e => {
@@ -14,9 +14,9 @@ export class ToDoList extends React.Component {
 			let updatedTaskList = this.state.taskList; //Better to change the state through a local variable instead of doing it directly
 			updatedTaskList.push(this.state.task);
 			this.setState({ taskList: updatedTaskList }); //Updates the taskList array with the newly inputed task by the user
-			let updatedCounter = this.state.taskCounter;
-			updatedCounter++;
-			this.setState({ taskCounter: updatedCounter }); //Increments the counter by +1 every time the user enters a task, the counter number is displayed
+			//let updatedCounter = this.state.taskCounter;
+			//updatedCounter++;
+			//this.setState({ taskCounter: updatedCounter }); //Increments the counter by +1 every time the user enters a task, the counter number is displayed
 			//on the bottom of the lists
 			let resetTask = this.state.task;
 			resetTask = "";
@@ -27,9 +27,9 @@ export class ToDoList extends React.Component {
 		let updatedTaskList = this.state.taskList;
 		updatedTaskList.splice(index, 1);
 		this.setState({ taskList: updatedTaskList });
-		let updatedCounter = this.state.taskCounter;
-		updatedCounter--;
-		this.setState({ taskCounter: updatedCounter });
+		//let updatedCounter = this.state.taskCounter;
+		//updatedCounter--;
+		//this.setState({ taskCounter: updatedCounter });
 	};
 	render() {
 		return (
@@ -69,7 +69,7 @@ export class ToDoList extends React.Component {
 							);
 						})}
 					</ol>
-					<p>{this.state.taskCounter} task(s) remaining.</p>
+					<p>{this.state.taskList.length} task(s) remaining.</p>
 				</div>
 			</div>
 		);
